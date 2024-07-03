@@ -7,7 +7,9 @@ import { fileURLToPath } from "node:url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] })
+const client = new Client({
+	intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
+})
 client.commands = new Collection()
 
 const foldersPath = path.join(__dirname, "commands")
