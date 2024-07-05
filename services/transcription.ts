@@ -31,8 +31,8 @@ export const recognizeTextFromAudio = async (filename: string) => {
         //@ts-ignore
         const transcription = result.results.channels[0].alternatives[0].transcript;
         console.log(result.results.channels[0].alternatives[0].transcript)
-        return transcription
         removeFile(filename)
+        return transcription
     }catch(e){
         console.log(e)
         removeFile(filename)
